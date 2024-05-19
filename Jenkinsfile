@@ -8,11 +8,12 @@ pipeline {
                 sh '''
                     cd app;
                     ls -l;
+                    sudo apt install python3.10-venv
                     python3 -m venv .venv
                     . .venv/bin/activate
-                    pip install flask
-                    pip install pylint
-                    pip install pytest
+                    pip3 install flask
+                    pip3 install pylint
+                    pip3 install pytest
                 '''
             }
         }
