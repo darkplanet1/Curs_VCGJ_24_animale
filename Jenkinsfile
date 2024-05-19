@@ -33,7 +33,7 @@ pipeline {
                     fi
                     
                     pylint --exit-zero librarie/*.py
-                    pylint --exit-zero 442_vulture.py
+                    pylint --exit-zero 442_vultur.py
                 '''
             }
         }
@@ -44,7 +44,7 @@ pipeline {
                 sh '''
                     cd app;
                     . .venv/bin/activate
-                    flask --app 442_vulture test;
+                    flask --app 442_vultur test;
                 '''
             }
         }
@@ -55,7 +55,7 @@ pipeline {
                 echo "Build ID: ${BUILD_NUMBER}"
                 echo "Creare imagine docker"
                 sh '''
-                    docker build -t curs_vcgj_2024_vulture:v${BUILD_NUMBER} .
+                    docker build -t curs_vcgj_2024_vultur:v${BUILD_NUMBER} .
                     '''
          
             }
