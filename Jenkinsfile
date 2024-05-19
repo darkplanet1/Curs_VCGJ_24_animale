@@ -8,7 +8,6 @@ pipeline {
                 sh '''
                     cd app;
                     ls -l;
-                    sudo apt install python3.10-venv
                     python3 -m venv .venv
                     . .venv/bin/activate
                     pip3 install flask
