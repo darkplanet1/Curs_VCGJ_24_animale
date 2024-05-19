@@ -49,7 +49,7 @@ pipeline {
         agent any
         app = docker.build("442D_Elefant")
         steps {
-        echo 'Docker construit cu success"
+        echo 'Docker construit cu success'
   }
 
     }
