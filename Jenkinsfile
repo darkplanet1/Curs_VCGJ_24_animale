@@ -46,8 +46,10 @@ pipeline {
         }
         
         stage('Build image') {
-        
-        app = docker.build("getintodevops/hellonode")
+        agent any
+        app = docker.build("442D_Elefant")
+        steps {
+        echo 'Docker construit cu success"
   }
 
     }
