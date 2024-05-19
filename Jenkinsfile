@@ -45,13 +45,11 @@ pipeline {
             }
         }
         
-        stage('Build image') {
-        agent any
-        app = docker.build("442D_Elefant")
-        steps {
-        echo 'Docker construit cu success'
-  }
-
-    }
+        stage('Build') {
+            steps {
+                echo 'Building the app...'
+                sh 'docker build . -t elefant_app'
+            }
+        }
 }
 }
