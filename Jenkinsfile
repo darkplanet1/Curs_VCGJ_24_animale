@@ -46,6 +46,7 @@ pipeline {
         }
         
         stage('Deploying') {
+        agent any 
             steps {
                 echo 'Building the app...'
                 sh 'docker build . -t elefant_app'
