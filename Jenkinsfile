@@ -51,9 +51,7 @@ pipeline {
             steps {
                 echo "Build ID: ${BUILD_NUMBER}"
                 echo "Creare imagine docker"
-                sh '''
-                	sudo docker build -t curs_vcgj_2024_elefant:v${BUILD_NUMBER} .
-                	'''
+                app = docker.build("442D_elefant")
             }
         }
     }
