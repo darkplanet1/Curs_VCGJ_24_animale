@@ -3,7 +3,7 @@ FROM python:3.8-alpine
 ENV FLASK_APP 442D_vultur
 RUN adduser -D stefan
 
-USER oni
+USER stefan
 
 WORKDIR /home/git/curs_vcgj_442D_vultur
 COPY app app
