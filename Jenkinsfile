@@ -44,15 +44,11 @@ pipeline {
                 '''
             }
         }
-        /*    }
-        }*/
-        stage('Deploy') {
-            agent any
-            steps {
-                echo "Build ID: ${BUILD_NUMBER}"
-                echo "Creare imagine docker"
-                app = docker.build("442D_elefant")
-            }
-        }
+        
+        stage('Build image') {
+        
+        app = docker.build("getintodevops/hellonode")
+  }
+
     }
 }
