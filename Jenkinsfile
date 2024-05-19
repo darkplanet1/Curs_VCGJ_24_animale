@@ -1,57 +1,62 @@
 pipeline {
-    agent none
-
+    agent any
+    
     stages {
         stage('Build') {
-            agent any
             steps {
                 echo 'Building...'
                 sh '''
                     cd app;
-                    pwd;
                     ls -l;
-                    . ./activeaza_venv_jenkins
-                    '''
-            }
-        }
-        
-        /*stage('Testare') {
-            problema rulare in paralel, al doilea stage nu mai poate porni venv-ul
-            parallel {
-         */
-        stage('pylint - calitate cod') {
-            agent any
-            steps {
-                sh '''
-                    cd app;
-                    . ./activeaza_venv;
-                    echo '\n\nVerificare lib/*.py cu pylint\n';
-                    pylint --exit-zero lib/*.py;
-                    echo '\n\nVerificare tests/*.py cu pylint';
-                    pylint --exit-zero tests/*.py;
-                    echo '\n\nVerificare sysinfo.py cu pylint';
-                    pylint --exit-zero 444D_flori.py;
+                    python3 -m venv .venv
+                    . .venv/bin/activate
+                    pip install flask
+                    pip install pylint
+                    pip install pytest
                 '''
             }
         }
-
-        stage('Unit Testing cu pytest') {
-            agent any
+        
+        stage('pylint - calitate cod') {
+            steps {
+                echo 'Pylint...'
+                sh '''
+                    cd app;
+                    . .venv/bin/activate
+                    if [ $? -eq 0 ]
+                    then
+                        echo "SUCCESS: venv was activated."
+                    else
+                        echo "FAIL: cannot activate venv"
+                        python3 -m venv .venv
+                        . .venv/bin/activate
+                    fi
+                    
+                    pylint --exit-zero librarie/*.py
+                    pylint --exit-zero 442_elefant.py
+                '''
+            }
+        }
+        
+        stage('Unit Testing') {
             steps {
                 echo 'Unit testing with Pytest...'
                 sh '''
                     cd app;
-                    . ./activeaza_venv;
-                    python3 -m pytest -v;
+                    . .venv/bin/activate
+                    flask --app 442_elefant test;
                 '''
             }
         }
-        /*    }
-        }*/
+        
         stage('Deploy') {
             agent any
             steps {
-                echo 'IN lucru ! ...'
+                echo "Build ID: ${BUILD_NUMBER}"
+                echo "Creare imagine docker"
+                sh '''
+                    docker build -t curs_vcgj_2024_elefant:v${BUILD_NUMBER} .
+         
             }
         }
     }
