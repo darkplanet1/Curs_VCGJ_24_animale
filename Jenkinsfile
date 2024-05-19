@@ -45,7 +45,7 @@ pipeline {
             }
         }
         
-        stage('Build') {
+        stage('Deploying') {
             steps {
                 echo 'Building the app...'
                 sh 'docker build . -t elefant_app'
