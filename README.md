@@ -16,4 +16,3 @@ Pasii au fost:
 
 De asemenea am instalat docker si jenkins
 
-
