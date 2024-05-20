@@ -61,45 +61,6 @@ def ia_detalii_magellan():
     
     
     
-@app.route("/pinguin/gentoo", methods=['GET'])
-def get_gentoo():
-    ret = "<h3>Pinguini Gentoo<h3>"
-    ret += "Specie: "
-    ret += librarie.biblioteca_pinguin.specie_gentoo()
-    ret += "<br>"
-    
-    ret += "Zona: "
-    ret += librarie.biblioteca_pinguin.zona_gentoo()
-    ret += "<br>"
-    
-    ret += "Detalii: "
-    ret += librarie.biblioteca_pinguin.detalii_gentoo()
-    ret += "<br>"
-    
-    return ret
-    
-@app.route("/pinguin/specie", methods=['GET'])
-def ia_specie_gentoo():
-    ret = ""
-    ret += librarie.biblioteca_pinguin.specie_gentoo()
-    
-    return ret
-    
-@app.route("/pinguin/zona", methods=['GET'])
-def ia_zona_gentoo():
-    ret = ""
-    ret += librarie.biblioteca_pinguin.zona_gentoo()
-    
-    return ret
-    
-@app.route("/pinguin/detalii", methods=['GET'])
-def ia_detalii_gentoo():
-    ret = ""
-    ret += librarie.biblioteca_pinguin.detalii_gentoo()
-    
-    return ret
-    
-    
     
     
 app.run(host = "127.0.0.1", port = 5001)
