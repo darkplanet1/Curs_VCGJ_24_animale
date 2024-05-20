@@ -16,6 +16,10 @@ Pasii au fost:
 
 De asemenea am instalat docker si jenkins
 
+Instalat masina virtuala: ( versiune masina virtuala )
+![image](https://github.com/darkplanet1/Curs_VCGJ_24_animale/assets/33785615/4afe2fa3-099e-45c7-9554-1472e9d2fe2f)
+
+
 Teste trecute cu ajutorul comenzii:
 python3 -m pytest -v
 
@@ -34,7 +38,15 @@ Rularea docker
 Status jenkins
 ![image](https://github.com/darkplanet1/Curs_VCGJ_24_animale/assets/33785615/55264c41-083b-446e-ac5c-dd34bec63e7e)
 
+![image](https://github.com/darkplanet1/Curs_VCGJ_24_animale/assets/33785615/ca3a1593-ee79-421a-a713-07aa5059fc3f)
 
 
+Install JDK 21
+https://www.oracle.com/java/technologies/downloads/#jdk21-windows
 
+Jenkins install wizard:
+https://www.jenkins.io/download/thank-you-downloading-windows-installer-stable/
+
+Install steps
+https://www.jenkins.io/doc/book/installing/windows/
 
