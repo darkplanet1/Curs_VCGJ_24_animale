@@ -51,9 +51,7 @@ pipeline {
             steps {
                 echo "Build ID: ${BUILD_NUMBER}"
                 echo "Creare imagine docker"
-                sh '''
-                	sudo docker build -t curs_vcgj_2024_vultur:v${BUILD_NUMBER} .
-                	'''
+                sh 'docker build . -t vultur_app'
             }
         }
     }
