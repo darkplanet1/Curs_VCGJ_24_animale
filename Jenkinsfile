@@ -33,7 +33,7 @@ pipeline {
                     fi
                     
                     pylint --exit-zero librarie/*.py
-                    pylint --exit-zero 442_lup.py
+                    pylint --exit-zero 442D_lup.py
                 '''
             }
         }
@@ -44,7 +44,7 @@ pipeline {
                 sh '''
                     cd app;
                     . .venv/bin/activate
-                    flask --app 442_lup test;
+                    flask --app 442D_lup test;
                 '''
             }
         }
