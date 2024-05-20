@@ -49,7 +49,7 @@ pipeline {
         agent any 
             steps {
                 echo 'Building the app...'
-                sh 'docker build . -t urspanda_app'
+                sh 'docker build . -t vulpe_app'
             }
         }
 }
