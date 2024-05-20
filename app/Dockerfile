@@ -1,17 +1,17 @@
 FROM python:3.8-alpine
 
-ENV FLASK_APP 442D_elefant
-RUN adduser -D oni
+ENV FLASK_APP 442D_girafa
+RUN adduser -D
 
-USER oni
+USER Andree-Ioana
 
-WORKDIR /home/git/curs_vcgj_442D_elefant
+WORKDIR /home/git/curs_vcgj_442D_girafa
 COPY app app
 RUN python -m venv .venv
 RUN .venv/bin/pip install -r app/requirements.txt
-USER root
+USER Andree-Ioana
 RUN chmod +x app/dockerstart.sh
-USER oni
-WORKDIR /home/git/curs_vcgj_442D_elefant/app
+USER Andree-Ioana
+WORKDIR /home/git/curs_vcgj_442D_girafa/app
 EXPOSE 5011
 CMD ["./dockerstart.sh"]
