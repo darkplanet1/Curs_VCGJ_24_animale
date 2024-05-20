@@ -1,3 +1,4 @@
+'''git version 2.34.1'''
     
 def specie_magellan():
     return("Magellan")
