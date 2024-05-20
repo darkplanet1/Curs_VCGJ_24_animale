@@ -18,4 +18,4 @@ def zona_european():
     return("Europa")
     
 def clasificare_european():
-    return("de treaba")
+    return("periculos")
