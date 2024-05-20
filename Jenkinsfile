@@ -52,7 +52,7 @@ pipeline {
                 echo "Build ID: ${BUILD_NUMBER}"
                 echo "Creare imagine docker"
                 sh '''
-                	sudo docker build -t curs_vcgj_2024_delfin:v${BUILD_NUMBER} .
+                	 docker build -t curs_vcgj_2024_delfin:v${BUILD_NUMBER} .
                 	'''
             }
         }
