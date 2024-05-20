@@ -44,17 +44,13 @@ pipeline {
                 '''
             }
         }
-        /*    }
-        }*/
-        stage('Deploy') {
-            agent any
+       
+        stage('Deploying') {
+        agent any 
             steps {
-                echo "Build ID: ${BUILD_NUMBER}"
-                echo "Creare imagine docker"
-                sh '''
-                	sudo docker build -t curs_vcgj_2024_vulpe:v${BUILD_NUMBER} .
-                	'''
+                echo 'Building the app...'
+                sh 'docker build . -t urspanda_app'
             }
         }
-    }
+}
 }
