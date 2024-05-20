@@ -1,4 +1,3 @@
-# Curs_VCGJ_24_animale
 Instalare Git, Docker și Python
 
 Instalare Git
