@@ -10,4 +10,10 @@ Pasii au fost:
 
    Dupa am instalat:
    git
-   
+   flask
+   pytest
+   pylint
+
+De asemenea am instalat docker si jenkins
+
+
