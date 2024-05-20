@@ -1,64 +1,56 @@
 pipeline {
-    agent any
-    
+    agent none
+
     stages {
         stage('Build') {
+            agent any
             steps {
                 echo 'Building...'
                 sh '''
                     cd app;
+                    pwd;
                     ls -l;
-                    python3 -m venv .venv
-                    . .venv/bin/activate
-                    pip install flask
-                    pip install pylint
-                    pip install pytest
-                '''
+                    . ./activeaza_venv_jenkins
+                    '''
             }
         }
-        
+
         stage('pylint - calitate cod') {
+            agent any
             steps {
-                echo 'Pylint...'
+            	echo 'Pylint...'
                 sh '''
                     cd app;
-                    . .venv/bin/activate
-                    if [ $? -eq 0 ]
-                    then
-                        echo "SUCCESS: venv was activated."
-                    else
-                        echo "FAIL: cannot activate venv"
-                        python3 -m venv .venv
-                        . .venv/bin/activate
-                    fi
+                    . ./activeaza_venv;
                     
-                    pylint --exit-zero librarie/*.py
-                    pylint --exit-zero 442_urspanda.py
+
+                    pylint --exit-zero librarie/*.py;
+                    
+                    pylint --exit-zero ./test_*.py;
+                    
+                    pylint --exit-zero 442D_urspanda.py;
                 '''
             }
         }
-        
-        stage('Unit Testing') {
+
+        stage('Unit Testing cu pytest') {
+            agent any
             steps {
                 echo 'Unit testing with Pytest...'
                 sh '''
                     cd app;
-                    . .venv/bin/activate
-                    flask --app 442_urspanda test;
+                    . ./activeaza_venv;
+                    python3 -m pytest -v;
                 '''
             }
         }
         
-        stage('Deploy') {
-            agent any
+        stage('Deploying') {
+        agent any 
             steps {
-                echo "Build ID: ${BUILD_NUMBER}"
-                echo "Creare imagine docker"
-                sh '''
-                    docker build -t curs_vcgj_2024_urspanda:v${BUILD_NUMBER} .
-                    '''
-         
+                echo 'Building the app...'
+                sh 'docker build . -t urspanda_app'
             }
         }
-    }
+}
 }
