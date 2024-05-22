@@ -2,7 +2,7 @@ import librarie.biblioteca_tigru as btigru
 
 def test_specie_tigru():
     spec = btigru.specie_tigru()
-    if spec == "tigru" : 
+    if spec == "siberian" : 
         assert True
     else: 
         assert False
