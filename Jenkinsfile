@@ -28,7 +28,7 @@ pipeline {
                     
                     pylint --exit-zero ./test_*.py;
                     
-                    pylint --exit-zero 442D_tigru.py;
+                    pylint --exit-zero 442D_Camila.py;
                 '''
             }
         }
@@ -49,7 +49,7 @@ pipeline {
         agent any 
             steps {
                 echo 'Building the app...'
-                sh 'docker build . -t tigru_app'
+                sh 'docker build . -t Camila_app'
             }
         }
 }
