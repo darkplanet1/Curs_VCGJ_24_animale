@@ -94,7 +94,7 @@ python3 -m pytest -v: Rulează testele pytest în mod verbose.
 
 4. Configurare Git și crearea de branch-uri
 
-git config --global user.email "stingamihaialexandru@yahoo.com": Configurează email-ul utilizatorului Git la nivel global.
+git config --global user.email "vlad.stoica3112@gmail.com": Configurează email-ul utilizatorului Git la nivel global.
 
 git config --global user.name "vladstoica1": Configurează numele utilizatorului Git la nivel global.
 
