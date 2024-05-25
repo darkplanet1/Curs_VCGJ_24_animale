@@ -15,7 +15,7 @@ def specie_European():
    
     
 def zona_European():
-    return("European")
+    return("Romania")
     
 def clasificare_European():
     return("carnivor")
