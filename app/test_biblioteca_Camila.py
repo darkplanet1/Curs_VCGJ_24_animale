@@ -39,7 +39,7 @@ def test_zona_Arabian():
         assert False
 
 def test_clasificare_Arabian():
-    clas = btigru.clasificare_Arabian()
+    clas = bCamila.clasificare_Arabian()
     if clas == "carnivor" :
         assert True
     else: 
