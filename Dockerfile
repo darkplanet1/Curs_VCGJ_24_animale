@@ -12,6 +12,6 @@ RUN .venv/bin/pip install -r app/requirements.txt
 USER root
 RUN chmod +x app/dockerstart.sh
 USER HasanKassas
-WORKDIR /home/git/Curs_VCGJ_24_animale
+WORKDIR /home/git/Curs_VCGJ_24_animale/app
 EXPOSE 5011
 CMD ["./dockerstart.sh"]
