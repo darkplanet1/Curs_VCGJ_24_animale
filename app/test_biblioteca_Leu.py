@@ -32,7 +32,7 @@ def test_specie_American():
         
 
 def test_zona_American():
-    zona = Leu.zona_American()
+    zona = bLeu.zona_American()
     if zona == "Chile" :
         assert True
     else: 
