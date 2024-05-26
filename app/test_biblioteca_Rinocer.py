@@ -1,4 +1,4 @@
-import librarie.biblioteca_Rinocer as Rinocer
+import librarie.biblioteca_Rinocer as bRinocer
 
 
 def test_specie_Rinocer():
