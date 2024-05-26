@@ -7,6 +7,7 @@ USER alexandrra26
 
 WORKDIR /home/git/curs_vcgj_442D_koala
 COPY app app
+USER root
 RUN python -m venv .venv
 RUN .venv/bin/pip install -r app/requirements.txt
 USER root
