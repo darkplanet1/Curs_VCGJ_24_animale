@@ -9,7 +9,7 @@ def test_specie_Crocodil():
         
 
 def test_zona_Crocodil():
-    zona = bCamila.zona_Crocodil()
+    zona = bCrocodil.zona_Crocodil()
     if zona == "Madagascar" :
         assert True
     else: 
@@ -24,7 +24,7 @@ def test_clasificare_Crocodil():
         
         
 def test_specie_African():
-    spec = bCamila.specie_African()
+    spec = bCrocodil.specie_African()
     if spec == "African" : 
         assert True
     else: 
@@ -32,7 +32,7 @@ def test_specie_African():
         
 
 def test_zona_African():
-    zona = bCamila.zona_African()
+    zona = bCrocodil.zona_African()
     if zona == "Madagascar" :
         assert True
     else: 
